@@ -1,0 +1,128 @@
+---
+title: "stringr Exercises"
+author: "Emma SCHYMANSKI"
+date: "2022-10-09"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readr)
+```
+
+## Background
+
+This little tutorial aims to make you familiar with writing 
+RMarkdown while testing some of the functions of the `stringr` 
+package and a few regular expressions. Please start by creating 
+your own RMarkdown document to write the answers. 
+
+```{r, echo = FALSE}
+htmltools::img(src = "https://raw.githubusercontent.com/rstudio/hex-stickers/999a52ccc6b53d8a620a5f930e4f9e68492d346d/PNG/stringr.png",
+               style = "float:right;height:100px;")
+```
+
+## Part 1: Strings and escape sequences in R
+
+#### 1A. Write a sentence with escape sequences.
+Try the sentence: `"It's the end of the world!" he said.\` . 
+Assign the string to a variable and try as`print()`, `cat()` and `writeLines()`.
+
+```{r escape sequences}
+#write your solutions here
+test_string <- '"It\'s the end of the world!" he said.\\'
+print(test_string)
+cat(test_string)
+writeLines(test_string)
+```
+
+End of Part 1. 
+
+
+## Part 2: `stringr` functions 
+We will be using the `words` data that is built into `stringr`. 
+The data set is available to you if you load the `stringr` package.
+
+```{r words}
+length(words)
+```
+
+#### 2A. Select words that
+1. Contain a `y`
+
+```{r words with y}
+#write your solutions here
+```
+
+
+2. Start with `y`
+```{r words starting with y}
+#write your solutions here
+```
+
+
+3. Contain a `y` within the word
+
+```{r y in word}
+#write your solutions here
+```
+
+
+In the next section, we will look into extraction.
+
+#### 2B. Extract the `y` and the previous character.
+
+Note: Use the function `unique()` around the results to avoid printing many empty matches.
+
+```{r extract y and char before}
+#write your solutions here
+```
+
+
+Finally, we will look at how to determine string length. 
+
+#### 2C. Get the length of the first ten words
+
+Note: You can use `head(words, 10)` as a convenient way to access the elements of the `words` vector.
+
+```{r length of first 10 words}
+#write your solution here
+```
+
+End of Part 2. 
+
+In the next section, a little bioinformatics case study will show
+how to use string manipulation on viruses 
+
+
+## Part 3: Virus research 
+
+Read the genome sequence of the Hepatitis D virus: [hepd.fasta](https://biostat2.uni.lu/practicals/data/hepd.fasta).
+For now, just execute the following:
+
+```{r read hepd}
+hepd <- readr::read_lines("https://biostat2.uni.lu/practicals/data/hepd.fasta")
+```
+
+#### 3A. What is the length of the genome sequence?
+
+```{r length of hepd sequence}
+#write your solution here
+```
+
+
+#### 3B. What is the sequence composition? How often does each character occur?
+
+```{r sequence composition}
+#write your solution here
+```
+
+#### 3C. Find motifs in the sequence using `str_locate()`. 
+
+Find all matches of the sequence $ATG$ in the sequence. 
+
+```{r sequence motifs}
+#write your solution here
+```
+
